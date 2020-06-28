@@ -15,3 +15,5 @@ RUN apk add --update --no-cache python python-dev py-pip build-base libxslt-dev 
   
 RUN echo "http://mirror.yandex.ru/mirrors/alpine/v3.8/main" >> /etc/apk/repositories && \
   echo "http://mirror.yandex.ru/mirrors/alpine/v3.8/community" >> /etc/apk/repositories
+ 
+ ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
