@@ -5,9 +5,10 @@ Maintainer Jaynath Kumar<Jaynath120.kumar@gmail.com>
 LABEL Description="This is a base image, which provides the python django app"
 
 RUN apk add --update --no-cache curl bash git openssh-client openssl zip wget
-
-# Set the git ssl verify to false
-RUN git config --global http.sslVerify false
+WORKDIR /opt/
+COPY ./DjangoSampleApp /opt
+RUN CD /opt/DjangoSampleApp
+WORKDIR /opt/DjangoSampleApp
 
 # Install python and then all dependecies from requirements.txt file
 RUN apk add --update --no-cache python python-dev py-pip build-base libxslt-dev libxml2-dev \
