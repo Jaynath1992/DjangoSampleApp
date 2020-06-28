@@ -7,10 +7,10 @@ LABEL Description="This is a base image, which provides the python django app"
 RUN apk add --update --no-cache curl bash git openssh-client openssl zip wget
 WORKDIR /opt/
 COPY / /opt
-RUN ls
 RUN cd /opt/DjangoSampleApp
 RUN ls
 WORKDIR /opt/DjangoSampleApp
+RUN ls
 
 # Install python and then all dependecies from requirements.txt file
 RUN apk add --update --no-cache python python-dev py-pip build-base libxslt-dev libxml2-dev \
