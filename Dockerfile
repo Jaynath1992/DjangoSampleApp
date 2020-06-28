@@ -6,7 +6,7 @@ LABEL Description="This is a base image, which provides the python django app"
 
 RUN apk add --update --no-cache curl bash git openssh-client openssl zip wget
 WORKDIR /opt/
-COPY ./DjangoSampleApp /opt
+COPY ./ /opt
 RUN cd /opt/DjangoSampleApp
 WORKDIR /opt/DjangoSampleApp
 
