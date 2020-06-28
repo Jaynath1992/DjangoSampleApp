@@ -36,7 +36,7 @@ stage ('Deploy to Dev environment')
 	{
 		script
 		{
-			      def dockerRun = 'docker run -d -p 8005:8000 --name my-django-app jaynath120/jaynath-django-app:1.0.0'
+			      def dockerRun = 'docker run -d -p 8005:8000 jaynath120/jaynath-django-app:1.0.0'
 			      sshagent(['deploy-to-dev-docker']) {
 				  sh "ssh -o StrictHostKeyChecking=no ec2-user@3.133.110.85 ${dockerRun}"
 			      }
